@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:googlemap/screens/google_map.dart';
+import 'package:googlemap/screens/watermark_image.dart';
 import 'package:image_picker/image_picker.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -64,7 +65,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       MaterialPageRoute(
                           builder: (context) => const GoogleMapsView()));
                 },
-                child: const Text('map'))
+                child: const Text('map')),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const WatermarkImage()));
+                },
+                child: const Text('watermark'))
           ],
         ),
       ),
